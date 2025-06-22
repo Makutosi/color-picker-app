@@ -1,27 +1,44 @@
-<!-- color picker app / 21.6.2025 -->
+<!-- color picker app / 18.4.2023 - 21.6.2025 -->
 
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Color Picker App</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="script.js" defer></script>
-</head>
-<body>
-  <h1>Background Gradient Maker</h1>
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Color Picker App</title>
+      <link rel="stylesheet" href="style.css">
+      <script src="script.js" defer></script>
+  </head>
 
-  <div>
-    <label>Starting color: </label>
-    <input type="color" id="startColor" value="#ff0000" />
-  </div>
+  <body>
+    <div class="container">
+      <h2>Background Color Maker</h2>
+      <p>Choose your favorite color!</p>
 
-  <div>
-    <label>End Color: </label>
-    <input type="color" id="endColor" value="#0000ff" />
-  </div>
+      <div class="picker-group">
+        <label>
+          <input type="checkbox" id="toggleGradient" />
+          Use two colors (gradient)
+        </label>
 
-  <p id="gradientText">Current gradient: </p>
-</body>
+        <div>
+          <div class="label-row">
+            <span>Color 1:</span>
+            <span id="color1Code">#1b157a</span>
+          </div>
+          <input type="color" id="color1" class="color-picker" value="#1b157a" />
+        </div>
+
+        <div id="secondColorSection" style="display: none;">
+          <div class="label-row">
+            <span>Color 2:</span>
+            <span id="color2Code">#1b157a</span>
+          </div>
+          <input type="color" id="color2" class="color-picker" value="#1b157a" />
+        </div>
+      </div>
+      
+      <div id="footer">@2023 Poco fermata</div>
+    </div>
+  </body>
 </html>

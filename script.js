@@ -1,21 +1,32 @@
-/* color picker app / 21.6.2025 */
+/* color picker app / 18.4.2023 - 21.6.2025 */
 
-const startColor = document.getElementById("startColor");
-const endColor = document.getElementById("endColor");
-const gradientText = document.getElementById("gradientText");
+const color1 = document.getElementById('color1');
+const color2 = document.getElementById('color2');
+const toggle = document.getElementById('toggleGradient');
+const color1Code = document.getElementById('color1Code');
+const color2Code = document.getElementById('color2Code');
+const secondSection = document.getElementById('secondColorSection');
 
-function updateGradient() {
-  const color1 = startColor.value;
-  const color2 = endColor.value;
+function updateBackground() {
+  const c1 = color1.value;
+  const c2 = color2.value;
 
-  const gradient = `linear-gradient(to right, ${color1}, ${color2})`;
+  color1Code.textContent = c1;
+  color2Code.textContent = c2;
 
-  document.body.style.background = gradient;
-  gradientText.textContent = `Current gradient: ${gradient}`;
+  if (toggle.checked) {
+    document.body.style.background = `linear-gradient(to right, ${c1}, ${c2})`;
+  } else {
+    document.body.style.background = c1;
+  }
 }
 
-startColor.addEventListener("input", updateGradient);
-endColor.addEventListener("input", updateGradient);
+toggle.addEventListener('change', () => {
+  secondSection.style.display = toggle.checked ? 'block' : 'none';
+  updateBackground();
+});
 
-// 初期化
-updateGradient();
+color1.addEventListener('input', updateBackground);
+color2.addEventListener('input', updateBackground);
+
+updateBackground(); 
