@@ -1,4 +1,4 @@
-/* color picker app / 18.4.2023 - 21.6.2025 */
+/* color picker app / Background Color Maker / 18.4.2023 - 21.6.2025 */
 
 const color1 = document.getElementById('color1');
 const color2 = document.getElementById('color2');
