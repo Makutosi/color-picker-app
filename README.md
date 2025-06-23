@@ -19,4 +19,4 @@ Enjoy the seamless experience of color exploration.
 
 ## Demo
 
-Try it here 👉 [GitHub Pages link coming soon]
+Try it here 👉 https://makutosi.github.io/color-picker-app/
